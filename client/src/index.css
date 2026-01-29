@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --bg-dark: #121214;
+  /* Original deep charcoal/black */
+  --bg-card: #1c1c1e;
+  --primary: #ffffff;
+  --accent: #f8c0c8;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a6;
+  --glass-bg: rgba(28, 28, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='light'] {
+  --bg-dark: #fdf5e6;
+  /* Cream */
+  --bg-card: #f8f0e0;
+  --primary: #121214;
+  --accent: #d4a5ab;
+  --text-primary: #121214;
+  --text-secondary: #5a5a5f;
+  --glass-bg: rgba(253, 245, 230, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent);
+  color: #000;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.btn {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #fff;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Hero Text Style */
+.hero-text {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
