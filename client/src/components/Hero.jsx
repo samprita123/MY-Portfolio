@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import mypic from '../assets/my_ai_pic.jpeg';
+import mypic from '../assets/no_ring_img.png';
 
 import { useMobile } from '../hooks/useMobile';
 
