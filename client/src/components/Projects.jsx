@@ -24,7 +24,8 @@ const ProjectCard = ({ project, i }) => {
                 position: 'relative',
                 height: isMobile ? '400px' : '550px',
                 borderRadius: '40px',
-                overflow: 'hidden',
+                overflow: 'visible', // Changed to visible for border
+                zIndex: 1,
                 cursor: 'pointer',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
                 perspective: '1000px'
@@ -32,120 +33,131 @@ const ProjectCard = ({ project, i }) => {
             whileHover={{ y: -15, transition: { duration: 0.4 } }}
             className="project-card neon-border"
         >
-            {/* Image Layer with Zoom effect */}
-            <motion.div
-                style={{ position: 'absolute', inset: 0, zIndex: 0 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-                <img
-                    src={project.image || `https://placehold.co/800x1200/121214/f8c0c8?text=${project.title.replace(/ /g, '+')}`}
-                    alt={project.title}
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        opacity: 0.6,
-                    }}
-                />
-                <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, var(--bg-dark) 15%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)'
-                }}></div>
-            </motion.div>
-
-            {/* Content Layer */}
+            {/* Inner Content Wrapper to handle clipping */}
             <div style={{
-                position: 'relative',
-                zIndex: 1,
+                width: '100%',
                 height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                padding: isMobile ? '30px' : '50px',
-                textAlign: 'left'
+                borderRadius: '40px',
+                overflow: 'hidden',
+                background: 'var(--bg-card)',
+                position: 'relative',
+                zIndex: 2
             }}>
-                {/* Top: Tech Tags */}
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                    {project.tech.map((t, idx) => (
-                        <span key={idx} style={{
-                            padding: '6px 12px',
-                            background: 'rgba(255,255,255,0.05)',
-                            backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            borderRadius: '100px',
-                            fontSize: '0.65rem',
-                            fontWeight: 700,
-                            letterSpacing: '1px',
-                            color: 'var(--accent)',
-                            textTransform: 'uppercase'
-                        }}>
-                            {t}
-                        </span>
-                    ))}
-                </div>
-
-                {/* Bottom: Info */}
-                <div>
-                    <h3 style={{
-                        fontFamily: 'Anton',
-                        fontSize: 'clamp(32px, 4vw, 56px)',
-                        color: '#fff',
-                        lineHeight: 1,
-                        textTransform: 'uppercase',
-                        marginBottom: '10px',
-                        textShadow: '0 5px 15px rgba(0,0,0,0.5)'
-                    }}>
-                        {project.title}
-                    </h3>
-
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        whileHover={{ opacity: 1, height: 'auto' }}
-                        className="card-content-expand"
+                {/* Image Layer with Zoom effect */}
+                <motion.div
+                    style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                    <img
+                        src={project.image || `https://placehold.co/800x1200/121214/f8c0c8?text=${project.title.replace(/ /g, '+')}`}
+                        alt={project.title}
                         style={{
-                            overflow: 'hidden',
-                            transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            opacity: 0.6,
                         }}
-                    >
-                        <p style={{
-                            color: 'rgba(255,255,255,0.7)',
-                            fontSize: '0.9rem',
-                            lineHeight: 1.5,
-                            marginBottom: '25px',
-                            maxWidth: '100%'
-                        }}>
-                            {project.description}
-                        </p>
+                    />
+                    <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, var(--bg-dark) 15%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)'
+                    }}></div>
+                </motion.div>
 
-                        <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-                            <a href={project.github} target="_blank" rel="noreferrer" style={{
-                                color: '#fff',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                textDecoration: 'none',
-                                fontSize: '0.8rem',
-                                fontWeight: 800,
-                                letterSpacing: '1px'
+                {/* Content Layer */}
+                <div style={{
+                    position: 'relative',
+                    zIndex: 1,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    padding: isMobile ? '30px' : '50px',
+                    textAlign: 'left'
+                }}>
+                    {/* Top: Tech Tags */}
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                        {project.tech.map((t, idx) => (
+                            <span key={idx} style={{
+                                padding: '6px 12px',
+                                background: 'rgba(255,255,255,0.05)',
+                                backdropFilter: 'blur(10px)',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                borderRadius: '100px',
+                                fontSize: '0.65rem',
+                                fontWeight: 700,
+                                letterSpacing: '1px',
+                                color: 'var(--accent)',
+                                textTransform: 'uppercase'
                             }}>
-                                <Github size={18} color="var(--accent)" /> GITHUB
-                            </a>
-                            <a href={project.external} target="_blank" rel="noreferrer" style={{
-                                color: '#fff',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                textDecoration: 'none',
-                                fontSize: '0.8rem',
-                                fontWeight: 800,
-                                letterSpacing: '1px'
+                                {t}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Bottom: Info */}
+                    <div>
+                        <h3 style={{
+                            fontFamily: 'Anton',
+                            fontSize: 'clamp(32px, 4vw, 56px)',
+                            color: '#fff',
+                            lineHeight: 1,
+                            textTransform: 'uppercase',
+                            marginBottom: '10px',
+                            textShadow: '0 5px 15px rgba(0,0,0,0.5)'
+                        }}>
+                            {project.title}
+                        </h3>
+
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            whileHover={{ opacity: 1, height: 'auto' }}
+                            className="card-content-expand"
+                            style={{
+                                overflow: 'hidden',
+                                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
+                        >
+                            <p style={{
+                                color: 'rgba(255,255,255,0.7)',
+                                fontSize: '0.9rem',
+                                lineHeight: 1.5,
+                                marginBottom: '25px',
+                                maxWidth: '100%'
                             }}>
-                                <ExternalLink size={18} color="var(--accent)" /> DEMO
-                            </a>
-                        </div>
-                    </motion.div>
+                                {project.description}
+                            </p>
+
+                            <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+                                <a href={project.github} target="_blank" rel="noreferrer" style={{
+                                    color: '#fff',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    textDecoration: 'none',
+                                    fontSize: '0.8rem',
+                                    fontWeight: 800,
+                                    letterSpacing: '1px'
+                                }}>
+                                    <Github size={18} color="var(--accent)" /> GITHUB
+                                </a>
+                                <a href={project.external} target="_blank" rel="noreferrer" style={{
+                                    color: '#fff',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    textDecoration: 'none',
+                                    fontSize: '0.8rem',
+                                    fontWeight: 800,
+                                    letterSpacing: '1px'
+                                }}>
+                                    <ExternalLink size={18} color="var(--accent)" /> DEMO
+                                </a>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
