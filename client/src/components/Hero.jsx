@@ -41,19 +41,28 @@ const Hero = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    {/* Aura Glow */}
+                    {/* Distinct Ring Structure - Enhanced */}
                     <div style={{
                         position: 'absolute',
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: '120%',
-                        height: '120%',
-                        background: 'radial-gradient(circle, rgba(56,189,248,0.4) 0%, rgba(188,19,254,0.2) 40%, transparent 70%)',
+                        width: '100%',
+                        height: '100%',
                         borderRadius: '50%',
-                        filter: 'blur(60px)',
-                        zIndex: -1
-                    }}></div>
+                        background: 'conic-gradient(from 0deg, transparent 0%, var(--neon-blue) 40%, var(--neon-pink) 70%, transparent 100%)',
+                        padding: '4px',
+                        zIndex: -1,
+                        filter: 'blur(2px)',
+                        boxShadow: '0 0 50px rgba(56, 189, 248, 0.3)'
+                    }}>
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            background: 'var(--bg-dark)',
+                            borderRadius: '50%'
+                        }}></div>
+                    </div>
 
                     <img
                         src={mypic}
