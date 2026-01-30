@@ -140,6 +140,22 @@ const Hero = () => {
                             Get in touch &rarr;
                         </a>
 
+                        <a href="https://drive.google.com/file/d/1wlCGXjXXEx7BEh6BWB6uLiVCMva-sq7H/view?usp=drivesdk" target="_blank" rel="noreferrer" style={{
+                            padding: '10px 25px',
+                            fontSize: '0.75rem',
+                            borderRadius: '30px',
+                            background: 'var(--accent)',
+                            border: '1px solid var(--accent)',
+                            color: '#fff',
+                            textDecoration: 'none',
+                            textTransform: 'uppercase',
+                            letterSpacing: '1px',
+                            fontWeight: 'bold',
+                            boxShadow: '0 0 15px var(--accent-glow)'
+                        }}>
+                            Resume
+                        </a>
+
                         {!isMobile && (
                             <motion.div
                                 animate={{ y: [0, 8, 0] }}

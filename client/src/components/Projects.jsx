@@ -111,6 +111,7 @@ const ProjectCard = ({ project, i }) => {
                             {project.title}
                         </h3>
 
+
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             whileHover={{ opacity: 1, height: 'auto' }}
@@ -129,34 +130,34 @@ const ProjectCard = ({ project, i }) => {
                             }}>
                                 {project.description}
                             </p>
-
-                            <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-                                <a href={project.github} target="_blank" rel="noreferrer" style={{
-                                    color: '#fff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '8px',
-                                    textDecoration: 'none',
-                                    fontSize: '0.8rem',
-                                    fontWeight: 800,
-                                    letterSpacing: '1px'
-                                }}>
-                                    <Github size={18} color="var(--accent)" /> GITHUB
-                                </a>
-                                <a href={project.external} target="_blank" rel="noreferrer" style={{
-                                    color: '#fff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '8px',
-                                    textDecoration: 'none',
-                                    fontSize: '0.8rem',
-                                    fontWeight: 800,
-                                    letterSpacing: '1px'
-                                }}>
-                                    <ExternalLink size={18} color="var(--accent)" /> DEMO
-                                </a>
-                            </div>
                         </motion.div>
+
+                        <div style={{ display: 'flex', gap: '25px', alignItems: 'center', marginTop: '15px' }}>
+                            <a href={project.github} target="_blank" rel="noreferrer" style={{
+                                color: '#fff',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                textDecoration: 'none',
+                                fontSize: '0.8rem',
+                                fontWeight: 800,
+                                letterSpacing: '1px'
+                            }}>
+                                <Github size={18} color="var(--accent)" /> GITHUB
+                            </a>
+                            <a href={project.external} target="_blank" rel="noreferrer" style={{
+                                color: '#fff',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                textDecoration: 'none',
+                                fontSize: '0.8rem',
+                                fontWeight: 800,
+                                letterSpacing: '1px'
+                            }}>
+                                <ExternalLink size={18} color="var(--accent)" /> DEMO
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

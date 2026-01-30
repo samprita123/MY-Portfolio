@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { Menu, X, Github, Linkedin, Instagram, Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import logo from '../assets/logoo.jpg';
+import logo from '../assets/logo.png';
 
 import { useMobile } from '../hooks/useMobile';
 
@@ -50,11 +50,11 @@ const Navbar = () => {
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                     style={{
-                        width: isMobile ? '45px' : '55px',
-                        height: isMobile ? '45px' : '55px',
-                        background: 'var(--bg-card)',
-                        borderRadius: '15px',
-                        border: '1px solid var(--glass-border)',
+                        width: isMobile ? '80px' : '90px',
+                        height: isMobile ? '80px' : '90px',
+                        // background: 'var(--bg-card)',
+                        // borderRadius: '15px',
+                        // border: '1px solid var(--glass-border)',
                         overflow: 'hidden',
                         padding: '5px'
                     }}
