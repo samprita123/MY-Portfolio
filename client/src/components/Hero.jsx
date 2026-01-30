@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import samprita from '../assets/samprita.png';
-import mypic from '../assets/my_pic.png';
+import mypic from '../assets/my_ai_pic.jpeg';
 
 import { useMobile } from '../hooks/useMobile';
 
@@ -31,7 +30,7 @@ const Hero = () => {
                     style={{
                         y: imageY,
                         position: 'relative',
-                        width: isMobile ? '80%' : 'clamp(300px, 35vw, 550px)',
+                        width: isMobile ? '90%' : 'clamp(400px, 40vw, 700px)',
                         height: 'auto',
                         zIndex: 1, // Behind the text
                         display: 'flex',
@@ -39,32 +38,8 @@ const Hero = () => {
                     }}
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    {/* Studio Soft Glowing Halo */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '45%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '120%', // Slightly larger for "Halo" feel
-                        height: '120%',
-                        borderRadius: '50%',
-                        // Ethereal gradient: Transparent center -> Neon Glow -> Transparent edge
-                        background: 'radial-gradient(circle at center, transparent 30%, rgba(56,189,248,0.2) 50%, rgba(236,72,153,0.3) 70%, transparent 80%)',
-                        zIndex: -1,
-                        filter: 'blur(30px)', // Soft, airy blur
-                    }}>
-                        {/* Inner bright rim for definition */}
-                        <div style={{
-                            position: 'absolute',
-                            inset: '15%',
-                            borderRadius: '50%',
-                            border: '2px solid rgba(255,255,255,0.3)',
-                            filter: 'blur(5px)'
-                        }}></div>
-                    </div>
-
                     <img
                         src={mypic}
                         alt="Samprita Patra"
@@ -72,22 +47,13 @@ const Hero = () => {
                             width: '100%',
                             height: 'auto',
                             objectFit: 'contain',
-                            // Studio Glow: Pink/Blue outline + HD Contrast
-                            filter: 'drop-shadow(0 0 15px rgba(236,72,153,0.5)) drop-shadow(0 0 30px rgba(56,189,248,0.3)) contrast(1.1) brightness(1.1) saturate(1.1)',
                             position: 'relative',
                             zIndex: 2,
+                            // Slight boost to match the vibrancy of the rest of the site if needed, 
+                            // but the image is already styled.
+                            filter: 'contrast(1.05) saturate(1.1)',
                         }}
                     />
-                    {/* Clean Professional Fade */}
-                    <div style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: '50%', // Taller fade for smoothness
-                        background: 'linear-gradient(to top, var(--bg-dark) 10%, rgba(10,14,23,0.8) 30%, transparent 100%)',
-                        zIndex: 3
-                    }}></div>
                 </motion.div>
 
                 {/* Main Name Text - Foreground layer (Overlapping image) */}
@@ -110,12 +76,15 @@ const Hero = () => {
                         gap: isMobile ? '0' : '0.2em',
                         lineHeight: '0.8',
                         textTransform: 'uppercase',
-                        background: 'linear-gradient(to bottom, var(--text-primary) 50%, var(--accent) 50%)',
+                        background: 'linear-gradient(135deg, #ffffff 0%, #38bdf8 40%, #ec4899 70%, #a855f7 100%)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
                         letterSpacing: '-0.04em',
                         fontFamily: 'Anton',
-                        fontWeight: 'normal'
+                        fontWeight: 'normal',
+                        textShadow: '0 0 40px rgba(56, 189, 248, 0.3)',
+                        filter: 'drop-shadow(0 0 20px rgba(236, 72, 153, 0.4))'
                     }}>
                         <span>SAMPRITA</span>
                         <span>PATRA</span>
