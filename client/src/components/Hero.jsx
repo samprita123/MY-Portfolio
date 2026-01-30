@@ -41,26 +41,27 @@ const Hero = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    {/* Distinct Ring Structure - Enhanced */}
+                    {/* Studio Soft Glowing Halo */}
                     <div style={{
                         position: 'absolute',
-                        top: '45%', // Moved up slightly
+                        top: '45%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: '110%',
-                        height: '110%',
+                        width: '120%', // Slightly larger for "Halo" feel
+                        height: '120%',
                         borderRadius: '50%',
-                        background: 'conic-gradient(from 180deg, transparent 0%, var(--neon-blue) 30%, #fff 50%, var(--neon-pink) 70%, transparent 100%)', // Brighter top
-                        padding: '4px',
+                        // Ethereal gradient: Transparent center -> Neon Glow -> Transparent edge
+                        background: 'radial-gradient(circle at center, transparent 30%, rgba(56,189,248,0.2) 50%, rgba(236,72,153,0.3) 70%, transparent 80%)',
                         zIndex: -1,
-                        filter: 'blur(10px)', // Softer glow for "eclipse" vibe
-                        boxShadow: '0 -10px 50px rgba(255, 255, 255, 0.4)' // Top glow
+                        filter: 'blur(30px)', // Soft, airy blur
                     }}>
+                        {/* Inner bright rim for definition */}
                         <div style={{
-                            width: '100%',
-                            height: '100%',
-                            background: 'var(--bg-dark)',
-                            borderRadius: '50%'
+                            position: 'absolute',
+                            inset: '15%',
+                            borderRadius: '50%',
+                            border: '2px solid rgba(255,255,255,0.3)',
+                            filter: 'blur(5px)'
                         }}></div>
                     </div>
 
@@ -71,19 +72,21 @@ const Hero = () => {
                             width: '100%',
                             height: 'auto',
                             objectFit: 'contain',
-                            filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8)) contrast(1.2) saturate(1.2)', // 3D Shadow + HD Color
+                            // Studio Glow: Pink/Blue outline + HD Contrast
+                            filter: 'drop-shadow(0 0 15px rgba(236,72,153,0.5)) drop-shadow(0 0 30px rgba(56,189,248,0.3)) contrast(1.1) brightness(1.1) saturate(1.1)',
                             position: 'relative',
                             zIndex: 2,
                         }}
                     />
-                    {/* Subtle bottom fade */}
+                    {/* Clean Professional Fade */}
                     <div style={{
                         position: 'absolute',
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        height: '30%',
-                        background: 'linear-gradient(to top, var(--bg-dark) 20%, transparent 100%)'
+                        height: '50%', // Taller fade for smoothness
+                        background: 'linear-gradient(to top, var(--bg-dark) 10%, rgba(10,14,23,0.8) 30%, transparent 100%)',
+                        zIndex: 3
                     }}></div>
                 </motion.div>
 
