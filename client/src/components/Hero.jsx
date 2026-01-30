@@ -44,17 +44,17 @@ const Hero = () => {
                     {/* Distinct Ring Structure - Enhanced */}
                     <div style={{
                         position: 'absolute',
-                        top: '50%',
+                        top: '45%', // Moved up slightly
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: '100%',
-                        height: '100%',
+                        width: '110%',
+                        height: '110%',
                         borderRadius: '50%',
-                        background: 'conic-gradient(from 0deg, transparent 0%, var(--neon-blue) 40%, var(--neon-pink) 70%, transparent 100%)',
+                        background: 'conic-gradient(from 180deg, transparent 0%, var(--neon-blue) 30%, #fff 50%, var(--neon-pink) 70%, transparent 100%)', // Brighter top
                         padding: '4px',
                         zIndex: -1,
-                        filter: 'blur(2px)',
-                        boxShadow: '0 0 50px rgba(56, 189, 248, 0.3)'
+                        filter: 'blur(10px)', // Softer glow for "eclipse" vibe
+                        boxShadow: '0 -10px 50px rgba(255, 255, 255, 0.4)' // Top glow
                     }}>
                         <div style={{
                             width: '100%',
@@ -71,7 +71,9 @@ const Hero = () => {
                             width: '100%',
                             height: 'auto',
                             objectFit: 'contain',
-                            filter: 'grayscale(10%) contrast(1.2) brightness(0.9)', // B&W high contrast
+                            filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8)) contrast(1.2) saturate(1.2)', // 3D Shadow + HD Color
+                            position: 'relative',
+                            zIndex: 2,
                         }}
                     />
                     {/* Subtle bottom fade */}
