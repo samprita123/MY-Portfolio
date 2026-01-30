@@ -25,14 +25,12 @@ const ProjectCard = ({ project, i }) => {
                 height: isMobile ? '400px' : '550px',
                 borderRadius: '40px',
                 overflow: 'hidden',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--glass-border)',
                 cursor: 'pointer',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
                 perspective: '1000px'
             }}
             whileHover={{ y: -15, transition: { duration: 0.4 } }}
-            className="project-card"
+            className="project-card neon-border"
         >
             {/* Image Layer with Zoom effect */}
             <motion.div
@@ -182,35 +180,35 @@ const Projects = () => {
             image: foodieImg
         },
         {
-            title: "Face Recognition Model",
-            description: "Real-time attendance system using OpenCV and Python. Automates facial detection.",
+            title: "FaceFinder-AI",
+            description: "Real-time Face recognition system using OpenCV,Python and Deep Learning. Automates facial detection.",
             tech: ["PYTHON", "OPENCV", "DL"],
-            github: "https://github.com/samprita123",
-            external: "#",
+            github: "https://github.com/samprita123/FaceFinder-AI.git",
+            external: "https://github.com/samprita123/FaceFinder-AI.git",
             image: frmImg
         },
         {
-            title: "Animal Prediction Model",
+            title: "PetiFy_AI",
             description: "Animal classification using Convolutional Neural Networks for high-accuracy species identification.",
             tech: ["PYTHON", "CNN", "TENSORFLOW"],
-            github: "https://github.com/samprita123/Animal_Prediction",
-            external: "https://github.com/samprita123/Animal_Prediction",
+            github: "https://github.com/samprita123/PetiFy_AI.git",
+            external: "https://github.com/samprita123/PetiFy_AI.git",
             image: animalImg
         },
         {
-            title: "Customer Relationship Management",
-            description: "Comprehensive system to manage customer records and transactions using Java and MySQL.",
+            title: "CRM System",
+            description: "Comprehensive Customer relationship management system to manage customer records and different modification using Java and MySQL.",
             tech: ["JAVA", "SWING", "MYSQL"],
-            github: "https://github.com/samprita123/Customer_Relationship_Management",
-            external: "https://github.com/samprita123/Customer_Relationship_Management",
+            github: "https://github.com/samprita123/CRM.git",
+            external: "https://github.com/samprita123/CRM.git",
             image: crmImg
         },
         {
-            title: "ODIA-OCR",
+            title: "ODIA_OCR",
             description: "Optical Character Recognition system for Odia text extraction with integrated TTS features.",
             tech: ["HTML", "CSS", "JS"],
-            github: "https://github.com/samprita123/ODIA-OCR",
-            external: "https://github.com/samprita123/ODIA-OCR",
+            github: "https://github.com/samprita123/ODIA_OCR.git",
+            external: "https://github.com/samprita123/ODIA_OCR.git",
             image: ocrImg
         }
     ];
@@ -267,8 +265,8 @@ const Projects = () => {
                 {/* Grid Layout */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-                    gap: isMobile ? '40px' : '60px',
+                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+                    gap: isMobile ? '30px' : '40px',
                     width: '100%'
                 }}>
                     {projects.map((project, i) => (

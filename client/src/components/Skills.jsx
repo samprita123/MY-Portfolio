@@ -11,7 +11,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" style={{ padding: isMobile ? '100px 0' : '150px 0', background: 'var(--bg-dark)', overflow: 'hidden' }}>
+        <section id="skills" style={{ padding: isMobile ? '100px 0' : '150px 0', overflow: 'hidden' }}>
             <div className="container" style={{ textAlign: 'center' }}>
                 <p style={{ color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '0.8rem', marginBottom: '20px' }}>
                     Capabilities

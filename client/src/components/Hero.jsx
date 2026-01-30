@@ -21,8 +21,7 @@ const Hero = () => {
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
-            background: 'var(--bg-dark)'
+            alignItems: 'center'
         }}>
 
             <div className="container" style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -42,6 +41,20 @@ const Hero = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
+                    {/* Aura Glow */}
+                    <div style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '120%',
+                        height: '120%',
+                        background: 'radial-gradient(circle, rgba(56,189,248,0.4) 0%, rgba(188,19,254,0.2) 40%, transparent 70%)',
+                        borderRadius: '50%',
+                        filter: 'blur(60px)',
+                        zIndex: -1
+                    }}></div>
+
                     <img
                         src={mypic}
                         alt="Samprita Patra"

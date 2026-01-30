@@ -6,7 +6,7 @@ const About = () => {
     const isMobile = useMobile();
 
     return (
-        <section id="about" style={{ padding: isMobile ? '100px 0' : '200px 0', background: 'var(--bg-dark)', color: 'var(--text-primary)' }}>
+        <section id="about" style={{ padding: isMobile ? '100px 0' : '200px 0', color: 'var(--text-primary)' }}>
             <div className="container" style={{ maxWidth: '1200px' }}>
                 <div style={{
                     display: 'grid',

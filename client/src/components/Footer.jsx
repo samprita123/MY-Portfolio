@@ -9,7 +9,6 @@ const Footer = () => {
     return (
         <footer style={{
             position: 'relative',
-            background: 'var(--bg-dark)',
             paddingTop: '100px',
             overflow: 'hidden'
         }}>

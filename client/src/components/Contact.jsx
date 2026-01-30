@@ -22,7 +22,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" style={{ padding: isMobile ? '100px 0' : '200px 0', background: 'var(--bg-dark)', textAlign: 'center' }}>
+        <section id="contact" style={{ padding: isMobile ? '100px 0' : '200px 0', textAlign: 'center' }}>
             <div className="container" style={{ maxWidth: '1200px' }}>
                 <div style={{
                     display: 'grid',
