@@ -229,7 +229,7 @@ const Projects = () => {
     return (
         <section id="projects" style={{
             background: 'var(--bg-dark)',
-            padding: isMobile ? '100px 0' : '200px 0',
+            padding: isMobile ? '60px 0' : '80px 0',
             width: '100%',
             position: 'relative',
             overflow: 'hidden'

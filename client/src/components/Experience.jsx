@@ -102,7 +102,7 @@ const Experience = () => {
     };
 
     return (
-        <section id="experience" style={{ padding: isMobile ? '100px 0' : '200px 0', background: 'var(--bg-dark)' }}>
+        <section id="experience" style={{ padding: isMobile ? '60px 0' : '80px 0', background: 'var(--bg-dark)' }}>
             <div className="container" style={{ maxWidth: '1200px' }}>
                 <p style={{ color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '4px', fontSize: '0.8rem', marginBottom: '20px', textAlign: 'center' }}>
                     Career Path
@@ -122,22 +122,83 @@ const Experience = () => {
                     <div style={{
                         display: 'flex',
                         flexDirection: isMobile ? 'column' : 'row',
-                        gap: isMobile ? '30px' : '80px',
+                        gap: isMobile ? '30px' : '40px',
                         width: '100%'
                     }}>
-                        {/* Tabs List */}
+                        {/* Education Block - Left Column */}
+                        <div style={{
+                            flex: isMobile ? 'none' : '0 0 250px',
+                            marginBottom: isMobile ? '30px' : '0'
+                        }}>
+                            <div style={{
+                                padding: '30px',
+                                background: 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+                                borderRadius: '24px',
+                                border: '1px solid var(--glass-border)',
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center'
+                            }}>
+                                <h4 style={{
+                                    color: 'var(--accent)',
+                                    fontSize: '0.9rem',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '2px',
+                                    marginBottom: '20px',
+                                    fontWeight: 'bold',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}>
+                                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }}></span>
+                                    Education
+                                </h4>
+
+                                <div>
+                                    <h3 style={{ fontSize: '1.4rem', marginBottom: '8px', fontWeight: 'bold' }}>GIFT Autonomous</h3>
+                                    <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '5px' }}>Bhubaneswar</p>
+                                    <p style={{ fontSize: '1rem', color: '#fff', marginBottom: '15px' }}>B.Tech in CSE (AI)</p>
+                                    <p style={{
+                                        fontSize: '0.9rem',
+                                        color: 'var(--accent)',
+                                        background: 'rgba(255, 255, 255, 0.05)',
+                                        display: 'inline-block',
+                                        padding: '5px 12px',
+                                        borderRadius: '12px',
+                                        marginBottom: '15px'
+                                    }}>
+                                        Aug 2022 – Mar 2026
+                                    </p>
+                                    <div style={{ paddingTop: '15px', borderTop: '1px solid var(--glass-border)' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                                            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>CGPA</span>
+                                            <span style={{ fontSize: '1rem', fontWeight: 'bold', color: '#fff' }}>9.1/10</span>
+                                        </div>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Rank</span>
+                                            <span style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'var(--accent)' }}>2nd in CS Dept.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tabs List - Middle Column */}
                         <div style={{
                             flex: isMobile ? 'none' : '0 0 200px',
                             borderLeft: isMobile ? 'none' : '1px solid var(--glass-border)',
+                            borderRight: isMobile ? 'none' : '1px solid var(--glass-border)',
                             borderBottom: isMobile ? '1px solid var(--glass-border)' : 'none',
                             display: 'flex',
                             flexDirection: isMobile ? 'row' : 'column',
                             overflowX: isMobile ? 'auto' : 'visible',
                             scrollbarWidth: 'none',
                             msOverflowStyle: 'none',
-                            padding: isMobile ? '10px 0' : '0',
+                            padding: isMobile ? '10px 0' : '0 20px',
                             gap: isMobile ? '20px' : '0',
-                            WebkitOverflowScrolling: 'touch'
+                            WebkitOverflowScrolling: 'touch',
+                            marginRight: isMobile ? '0' : '30px'
                         }}>
                             {jobs.map((job, index) => (
                                 <button
@@ -146,22 +207,21 @@ const Experience = () => {
                                     style={{
                                         display: 'block',
                                         width: isMobile ? 'auto' : '100%',
-                                        padding: isMobile ? '12px 25px' : '25px 30px',
+                                        padding: isMobile ? '12px 25px' : '20px 20px',
                                         background: selectedTab === index ? 'var(--bg-card)' : 'transparent',
                                         border: 'none',
-                                        borderRadius: isMobile ? '20px' : '0',
-                                        borderLeft: !isMobile && selectedTab === index ? '2px solid var(--accent)' : '2px solid transparent',
-                                        borderBottom: isMobile && selectedTab === index ? '2px solid var(--accent)' : '2px solid transparent',
+                                        borderRadius: isMobile ? '20px' : '12px',
                                         textAlign: isMobile ? 'center' : 'left',
                                         color: selectedTab === index ? 'var(--text-primary)' : 'var(--text-secondary)',
                                         fontFamily: 'Inter, sans-serif',
                                         fontSize: '0.9rem',
-                                        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                                        transition: 'all 0.3s ease',
                                         cursor: 'pointer',
-                                        marginLeft: isMobile ? '0' : '-1.5px',
                                         fontWeight: selectedTab === index ? '600' : '400',
                                         whiteSpace: 'nowrap',
-                                        flexShrink: 0
+                                        flexShrink: 0,
+                                        marginBottom: isMobile ? '0' : '10px',
+                                        borderLeft: !isMobile && selectedTab === index ? '3px solid var(--accent)' : '3px solid transparent'
                                     }}
                                 >
                                     {job.company}
